@@ -5,6 +5,10 @@ beforeAll(async () => {
   await connectDB();
 });
 
+afterAll(async () => {
+  await mongoose.connection.close();
+});
+
 describe("Register API Test", () => {
   it("should register a user successfully", async () => {
     const res = await request(app)
@@ -18,5 +22,5 @@ describe("Register API Test", () => {
     expect(res.statusCode).toBe(200);
     expect(res.body.status).toBe(true);
     expect(res.body.message).toBe("User Registered Successfully...!");
-  });
+  }, 10000);
 });
