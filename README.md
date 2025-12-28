@@ -197,7 +197,7 @@ npm test
 
 ## 👤 Author
 
-Aman  
+Aman  Raut
 Node.js Backend Developer
 
 ---
